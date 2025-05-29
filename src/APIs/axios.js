@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://pse-restaurant-be.final25.psewmad.org/api',
 });
 
 API.interceptors.request.use((config) => {

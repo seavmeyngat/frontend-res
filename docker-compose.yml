@@ -1,8 +1,10 @@
-version: '3.8'
+
+
 
 services:
-  vite-frontend:
+  react-vite-app:
     build: .
     ports:
-      - "3307:80"   # Host port 3000 mapped to container port 80 (Nginx)
-    container_name: vite-react-app
+      - "3311:3311"
+    environment:
+      - NODE_ENV=production
