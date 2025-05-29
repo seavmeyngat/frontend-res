@@ -25,7 +25,7 @@ export default function HomePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("https://pse-restaurant-be.final25.psewmad.org/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -47,8 +47,8 @@ export default function HomePage() {
       try {
         setLoading(true);
         const [notificationRes, configRes] = await Promise.all([
-          fetch("http://localhost:5000/api/notifications/current"),
-          fetch("http://localhost:5000/api/restaurant_config/getAll"),
+          fetch("https://pse-restaurant-be.final25.psewmad.org/api/notifications/current"),
+          fetch("https://pse-restaurant-be.final25.psewmad.org/api/restaurant_config/getAll"),
         ]);
         const notificationData = await notificationRes.json();
         const configData = await configRes.json();

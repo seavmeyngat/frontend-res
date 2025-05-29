@@ -21,11 +21,11 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const itemsRes = await fetch('http://localhost:5000/api/items/getAll');
-        const notiRes = await fetch('http://localhost:5000/api/notifications');
-        const bookingRes = await fetch('http://localhost:5000/api/bookings/getAll');
+        const itemsRes = await fetch('https://pse-restaurant-be.final25.psewmad.org/api/items/getAll');
+        const notiRes = await fetch('https://pse-restaurant-be.final25.psewmad.org/api/notifications');
+        const bookingRes = await fetch('https://pse-restaurant-be.final25.psewmad.org/api/bookings/getAll');
         const token = localStorage.getItem('token');
-        const usersRes = await fetch('http://localhost:5000/api/users/getAll', {
+        const usersRes = await fetch('https://pse-restaurant-be.final25.psewmad.org/api/users/getAll', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -51,13 +51,13 @@ function Home() {
 
   const updateBookingStatus = async (id, status, reason = '') => {
     try {
-      await fetch(`http://localhost:5000/api/bookings/${id}`, {
+      await fetch(`https://pse-restaurant-be.final25.psewmad.org/api/bookings/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status, rejection_reason: reason }),
       });
       // Reload bookings
-      const updatedBookings = await fetch('http://localhost:5000/api/bookings/getAll');
+      const updatedBookings = await fetch('https://pse-restaurant-be.final25.psewmad.org/api/bookings/getAll');
       const data = await updatedBookings.json();
       setBookings(data);
     } catch (err) {

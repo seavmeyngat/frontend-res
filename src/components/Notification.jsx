@@ -11,7 +11,7 @@ function NotificationDashboard() {
   });
   const [editingId, setEditingId] = useState(null);
 
-  const API_URL = 'http://localhost:5000/api/notifications';
+  const API_URL = 'https://pse-restaurant-be.final25.psewmad.org/api/notifications';
 
   const fetchNotifications = async () => {
     try {

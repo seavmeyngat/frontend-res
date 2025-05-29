@@ -20,7 +20,7 @@ function BookingPage() {
 
   useEffect(() => {
     // ✅ Replace this with your actual API URL
-    fetch('http://localhost:5000/api/notifications/getFullbooking')
+    fetch('https://pse-restaurant-be.final25.psewmad.org/api/notifications/getFullbooking')
       .then((res) => res.json())
       .then((data) => {
         setNotification(data); // Assuming the API returns a single notification object
